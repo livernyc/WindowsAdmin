@@ -607,7 +607,8 @@ Foreach($Server in $Servers){
 }
 
 IF($CertExpireWarnFound -eq $True){
-$smtp = "hboservermail.homebox.com" 
+# Change $smtp to a valid SMTP mail server for you to use.
+$smtp = "enteryourmailserver.com" 
 $maildate = get-date
 $maildate = $maildate.ToShortDateString()
 $subject = "SSL certificates found that will expire in within 30 days or less from $maildate!"
@@ -615,5 +616,6 @@ $body = "<b><span style='color:#5B9BD5'>The following SSL certificates are set t
 $body += "<br>"
 $body += $bodyLoop
 
-Send-MailMessage -SmtpServer $smtp -To 'chris.lamorte@timewarner.tech', 'tom.huang@timewarner.tech' -From 'ADReporter@hbo.com' -Subject $subject -Body $body -BodyAsHtml -Priority "high"
+# You must at least change the to entires to valid email addresses for you.
+Send-MailMessage -SmtpServer $smtp -To 'tech1@example.tech', 'tech2@example.tech' -From 'ADReporter@hbo.com' -Subject $subject -Body $body -BodyAsHtml -Priority "high"
 }
