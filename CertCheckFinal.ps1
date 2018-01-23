@@ -1,4 +1,10 @@
 # Functions declare begins
+
+<#
+Functions Author: Aman Dhally Send_HTML_Email
+https://gallery.technet.microsoft.com/scriptcenter/Send-HTML-Formatted-email-26925a96
+#>
+
 function Send-MailMessage
 {
     [CmdletBinding()]
